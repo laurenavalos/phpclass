@@ -52,7 +52,7 @@ include "../includes/header.php"
         echo strtolower($fullName);
 
         //var_dump(str_split($fullName))
-
+        //test comment
        //echo strpos($fullName, 0);
         echo $fullName [0]
 
