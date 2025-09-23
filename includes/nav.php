@@ -2,6 +2,8 @@
 $isHome = $_SERVER['REQUEST_URI'] ==  "/";
 $isLoops = $_SERVER['REQUEST_URI'] == "/loops/";
 $isCountdown = $_SERVER['REQUEST_URI'] == "/countdown/";
+$isMagic8Ball = $_SERVER['REQUEST_URI'] == "/magic-8ball/";
+
 ?>
 <nav>
     <?=$_SERVER['REQUEST_URI']?>
