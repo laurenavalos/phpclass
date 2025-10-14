@@ -8,18 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Lauren's Website</title>
     <link rel = "stylesheet" href = "/css/base.css">
-    <style>
-        table{
-            border: 1px solid  black;
-            width: 80%;
-            margin: 10px auto;
-            table-layout: fixed;
-        }
-        th, td{
-            border: 1px solid  black;
-            padding: .2rem;
-        }
-    </style>
+    <link rel ="stylesheet" href = "./css/grid.css">
 </head>
 <body>
 <?php
@@ -31,7 +20,7 @@ include "../includes/header.php"
     ?>
     <main>
         <h2>My Movie List</h2>
-        <table>
+        <table class = "movies">
             <tr>
                 <th>ID</th>
                 <th>Title</th>
@@ -50,14 +39,15 @@ include "../includes/header.php"
         $movieRating = $row["MovieRating"];
 
         echo "<tr>";
-        echo "<td>$movieID</td>";
-        echo "<td>$movieTitle</td>";
-        echo "<td>$movieRating</td>";
+        echo "    <td>$movieID</td>";
+        echo "    <td>";
+        echo "    <a href=\"movie.php?id=$movieID\">$movieTitle</a>";
+        echo "    <td>$movieRating</td>";
         echo "</tr>";
     }
 
 ?></table>
-        <a href = "addmovie.php" >Add a new movie</a>
+        <a href = "/movielist/addmovie.php" >Add a new movie</a>
     </main>
 </div>
 <?php

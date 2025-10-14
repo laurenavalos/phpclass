@@ -1,4 +1,5 @@
 <?php
+    $errorMessage = "";
     if (!empty($_GET["txtTitle"]) && !empty($_GET["txtRating"])) {
         include "../includes/newdb.php";
         $con = getDBConnection();
@@ -10,10 +11,11 @@
             $stmt = mysqli_prepare($con, $query);
             mysqli_stmt_bind_param($stmt, "ss", $txtTitle, $txtRating);
             mysqli_stmt_execute($stmt);
-            header("location: index.php");
+            header("location: /movielist");
         }
         catch(mysqli_sql_exception $ex){
-            echo $ex;
+            //echo $ex;
+            $errorMessage = $ex;
         }
     }
 
@@ -26,45 +28,18 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Lauren's Website</title>
     <link rel = "stylesheet" href = "/css/base.css">
-    <style>
-        .grid-header {grid-area: grid-header;}
-        .movie-title {grid-area: movie-title;}
-        .title-input {grid-area: title-input;}
-        .movie-rating {grid-area: movie-rating;}
-        .rating-input {grid-area: rating-input;}
-        .grid-footer {grid-area: grid-footer;}
-
-        .grid-container{
-            display: grid;
-            grid-template-areas:
-            "grid-header grid-header"
-            "movie-title title-input"
-            "movie-rating rating-input"
-            "grid-footer grid-footer"
-            ;
-            border: 1px solid black;
-        }
-
-        .grid-container > div{
-            border: 1px solid black;
-        }
-
-        .grid-container input[type = "text"]{
-            width: 98%;
-            margin: 2px 0;
-        }
-    </style>
-</head>
+    <link rel = "stylesheet" href = "./css/grid.css"
+ </head>
 <body>
 <?php
-include "../includes/header.php"
+include "../includes/header.php";
 ?>
 <div id = "three-column">
     <?php
-    include "../includes/nav.php"
+    include "../includes/nav.php";
     ?>
     <main>
-        <form method = "get"></form>
+        <form method = "get">
         <div class = "grid-container">
             <div class = "grid-header">
                 <h3>Add new movie</h3>
@@ -82,14 +57,18 @@ include "../includes/header.php"
             <div class = "rating-input">
                 <input type = "text" name = "txtRating" id = "txtRating">
             </div>
+            <div class = "error <?php echo $errorMessage == "" ? "hidden" : "" ?>">
+                <p><?=$errorMessage;?></p>
+            </div>
             <div class = "grid-footer">
                 <input type = "submit" value = "Add Movie">
             </div>
         </div>
+        </form>
     </main>
 </div>
 <?php
-include "../includes/footer.php"
+include "../includes/footer.php";
 ?>
 </body>
 </html>

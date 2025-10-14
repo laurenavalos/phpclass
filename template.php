@@ -10,11 +10,11 @@
 </head>
 <body>
 <?php
-include "../includes/header.php"
+include "../includes/header.php";
 ?>
 <div id = "three-column">
     <?php
-    include "../includes/nav.php"
+    include "../includes/nav.php";
     ?>
     <main>
         Todo: put file contents here.
