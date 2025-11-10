@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch API</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div id="wrapper">
+        <h1>Random Pokemon Generator</h1>
+
+        <!-- Pokemon container -->
+        <div class="pokemon-ctr"></div>
+
+        <!-- Button to fetch Pokemon -->
+        <button id="fetch-btn">Get Random Pokemon</button>
+
+    <script>
+        // get references
+        const pokemonContainer = document.querySelector('.pokemon-ctr');
+        const fetchBtn = document.getElementById('fetch-btn');
+
+        const getRandomPokemon = async () => {
+            const url = 'https://pokeapi.co/api/v2/pokemon/' + Math.floor(Math.random() * 150);
+            try {
+                const response = await fetch(url);
+                const pokemonObj = await response.json();
+                return pokemonObj;
+            } catch (error) {
+                console.error('Error fetching Pokemon:', error);
+            }
+        };
+
+        const renderPokemon = (pokemonObj) => {
+            // Clear previous Pokemon
+            pokemonContainer.innerHTML = '';
+
+            // Create image element
+            const img = document.createElement('img');
+            img.src = pokemonObj.sprites.front_default;
+            img.alt = pokemonObj.name;
+
+            // Append image to container
+            pokemonContainer.append(img);
+
+            return pokemonObj; // Return the object as required
+        };
+
+        // Event listener for the button
+        fetchBtn.addEventListener('click', async () => {
+            const pokemon = await getRandomPokemon();
+            if (pokemon) renderPokemon(pokemon);
+        });
+    </script>
+    </div>
+</body>
+</html>
