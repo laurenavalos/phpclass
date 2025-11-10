@@ -15,7 +15,7 @@ $isMovieList = $_SERVER['REQUEST_URI'] == "/movielist/";
     <li class = "<?=$isCountdown?>"><a href = "/countdown">Countdown</a></li>
     <li class = "<?=$isDice?>"><a href = "/dice">Dice</a></li>
     <li class = "<?=$isMagic8Ball?>"><a href = "/magic-8ball">Magic 8-Ball</a></li>
-    <li class = "<?=$isMovieList?>"><a href = "/movielist">Movie List </a></li>
+    <li class = "<?=$isMovieList?>"><a href = "/movielist">Movie List</a></li>
 </ul>
 </nav>
 
