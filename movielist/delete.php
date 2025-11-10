@@ -1,16 +1,13 @@
 <?php
 
-if(!empty($_GET["id"])) {
+if(isset($_GET["id"])) {
+    $id = $_GET["id"];
     include "../includes/newdb.php";
-    $con = getDBConnection();
-
-    $movieID = $_GET["id"];
 
     try {
-        $query = "DELETE FROM movielist WHERE MovieID = ?";
-        $stmt = mysqli_prepare($con, $query);
-        mysqli_stmt_bind_param($stmt, "s", $movieID);
-        mysqli_stmt_execute($stmt);
+        $sql = mysqli_prepare($con, "delete from movielist where movieID = ?");
+        mysqli_stmt_bind_param($sql, "s", $id);
+        mysqli_stmt_execute($sql);
     } catch (mysqli_sql_exception $ex) {
         echo $ex;
     }
