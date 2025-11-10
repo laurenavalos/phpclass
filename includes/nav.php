@@ -5,6 +5,7 @@ $isCountdown = $_SERVER['REQUEST_URI'] == "/countdown/";
 $isDice = $_SERVER['REQUEST_URI'] == "/dice/";
 $isMagic8Ball = $_SERVER['REQUEST_URI'] == "/magic-8ball/";
 $isMovieList = $_SERVER['REQUEST_URI'] == "/movielist/";
+$isCustomer = $_SERVER['REQUEST_URI'] == "/customer/";
 
 ?>
 <nav>
@@ -16,6 +17,7 @@ $isMovieList = $_SERVER['REQUEST_URI'] == "/movielist/";
     <li class = "<?=$isDice?>"><a href = "/dice">Dice</a></li>
     <li class = "<?=$isMagic8Ball?>"><a href = "/magic-8ball">Magic 8-Ball</a></li>
     <li class = "<?=$isMovieList?>"><a href = "/movielist">Movie List</a></li>
+    <li class = "<?=$isCustomer?>"><a href = "/customer">Customers</a></li>
 </ul>
 </nav>
 
