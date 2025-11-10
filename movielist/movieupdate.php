@@ -7,7 +7,6 @@ if (!empty($_POST["txtTitle"]) && !empty($_POST["txtRating"])) {
     $txtID = $_POST["txtID"];
 
     try {
-        // Fixed SQL: removed extra comma
         $sql = mysqli_prepare($con, "UPDATE movielist SET movieTitle = ?, movieRating = ? WHERE movieID = ?");
         mysqli_stmt_bind_param($sql, "ssi", $txtTitle, $txtRating, $txtID);
         mysqli_stmt_execute($sql);
