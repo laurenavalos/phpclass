@@ -6,15 +6,22 @@ include "../includes/newdb.php";
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Customer List</title>
     <link rel="stylesheet" href="/css/base.css">
     <style>
         table, th, td {
             border: 1px solid;
-            table-layout: fixed;
-            width: 90%;
             border-collapse: collapse;
+            padding: 5px;
+            width: 90%;
+            table-layout: fixed;
+        }
+        th, td {
+            text-align: left;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
         }
     </style>
 </head>
@@ -24,48 +31,37 @@ include "../includes/newdb.php";
     <?php include "../includes/nav.php"; ?>
     <main>
         <h2>Customer List</h2>
-
         <table>
             <tr>
                 <th>ID</th>
                 <th>First</th>
                 <th>Last</th>
-                <th>Address</th>
                 <th>City</th>
                 <th>State</th>
-                <th>Zip</th>
-                <th>Phone</th>
                 <th>Email</th>
             </tr>
-
             <?php
             try {
-                $con = mysqli_connect("localhost", "dbuser", "dbdev123", "customer");
                 $result = mysqli_query($con, "SELECT * FROM customers");
 
                 while ($row = mysqli_fetch_assoc($result)) {
                     echo "<tr>";
-                    echo "<td>" . htmlspecialchars($row['id']) . "</td>";
-                    echo "<td>" . htmlspecialchars($row['first']) . "</td>";
-                    echo "<td>" . htmlspecialchars($row['last']) . "</td>";
-                    echo "<td>" . htmlspecialchars($row['address']) . "</td>";
-                    echo "<td>" . htmlspecialchars($row['city']) . "</td>";
-                    echo "<td>" . htmlspecialchars($row['state']) . "</td>";
-                    echo "<td>" . htmlspecialchars($row['zip']) . "</td>";
-                    echo "<td>" . htmlspecialchars($row['phone']) . "</td>";
-                    echo "<td>" . htmlspecialchars($row['email']) . "</td>";
+                    echo "<td>" . $row['customerID'] . "</td>";
+                    echo "<td><a href='customerupdate.php?id=" . $row['customerID'] . "'>" . $row['first'] . "</a></td>";
+                    echo "<td><a href='customerupdate.php?id=" . $row['customerID'] . "'>" . $row['last'] . "</a></td>";
+                    echo "<td>" . $row['city'] . "</td>";
+                    echo "<td>" . $row['state'] . "</td>";
+                    echo "<td>" . $row['email'] . "</td>";
                     echo "</tr>";
                 }
             } catch (mysqli_sql_exception $ex) {
-                echo "<tr><td colspan='9'>" . $ex->getMessage() . "</td></tr>";
+                echo $ex;
             }
             ?>
         </table>
-
         <p><a href="addcustomer.php">Add New Customer</a></p>
     </main>
 </div>
 <?php include "../includes/footer.php"; ?>
 </body>
 </html>
-
