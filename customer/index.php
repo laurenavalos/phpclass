@@ -47,6 +47,7 @@ include "../includes/newdb.php";
                 <th>Zip</th>
                 <th>Phone</th>
                 <th>Email</th>
+                <th>Password (MD5)</th>
             </tr>
 
             <?php
@@ -65,6 +66,7 @@ include "../includes/newdb.php";
                     echo "<td><a href='$link'>" . $row['zip'] . "</a></td>";
                     echo "<td><a href='$link'>" . $row['phone'] . "</a></td>";
                     echo "<td><a href='$link'>" . $row['email'] . "</a></td>";
+                    echo "<td><a href='$link'>" . $row['password'] . "</a></td>";
                     echo "</tr>";
                 }
 

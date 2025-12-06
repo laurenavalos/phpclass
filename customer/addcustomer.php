@@ -17,10 +17,18 @@ if (!empty($_POST["first"]) && !empty($_POST["last"]) && !empty($_POST["email"])
 
     if ($password == $confirm) {
         echo "<p>Passwords match, running insert...</p>";
+
+        $MemberKey = sprintf('%04X%04X%04X%04X%04X%04X%04X%04X',
+            mt_rand(0, 65535), mt_rand(0, 65535), mt_rand(0, 65535),
+            mt_rand(16384, 20479), mt_rand(32768, 49151), mt_rand(0, 65535),
+            mt_rand(0, 65535), mt_rand(0, 65535));
+
+        $hashedPassword = md5($password . $MemberKey);
+
         try {
             $sql = mysqli_prepare($con, "INSERT INTO customers (first, last, address, city, state, zip, phone, email, password)
                                      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
-            mysqli_stmt_bind_param($sql, "sssssssss", $first, $last, $address, $city, $state, $zip, $phone, $email, $password);
+            mysqli_stmt_bind_param($sql, "sssssssss", $first, $last, $address, $city, $state, $zip, $phone, $email, $hashedPassword);
             mysqli_stmt_execute($sql);
             echo "<p>Insert executed. Rows affected: " . mysqli_stmt_affected_rows($sql) . "</p>";
         } catch (mysqli_sql_exception $ex) {

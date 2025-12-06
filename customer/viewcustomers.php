@@ -39,6 +39,7 @@ include "../includes/newdb.php";
                 <th>City</th>
                 <th>State</th>
                 <th>Email</th>
+                <th>Password (MD5)</th>
             </tr>
             <?php
             try {
@@ -52,6 +53,7 @@ include "../includes/newdb.php";
                     echo "<td>" . $row['city'] . "</td>";
                     echo "<td>" . $row['state'] . "</td>";
                     echo "<td>" . $row['email'] . "</td>";
+                    echo "<td>" . $row['password'] . "</td>";
                     echo "</tr>";
                 }
             } catch (mysqli_sql_exception $ex) {
