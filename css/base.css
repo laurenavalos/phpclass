@@ -70,3 +70,7 @@ a{
     text-decoration: none;
     color: #000000;
 }
+#err{
+    color: red;
+    margin: 0;
+}
