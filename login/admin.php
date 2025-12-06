@@ -1,7 +1,15 @@
 <?php
 session_start();
+
+$MemberKey = sprintf('%04X%04X%04X%04X%04X%04X%04X%04X',
+mt_rand(0, 65535), mt_rand(0, 65535), mt_rand(0, 65535),
+mt_rand(16384, 20479), mt_rand(32768, 49151), mt_rand(0, 65535),
+mt_rand(0, 65535), mt_rand(0, 65535));
+
+
+
 $err="";
-if(!isset($_SESSION["UID"])){
+if(($_SESSION["roleID"]!=1)){
     header("Location: index.php");
 }
 
@@ -44,8 +52,8 @@ if(isset($_POST["btnsubmit"])){
         $err = "Email is required";
     }
     if($err==""){
-        $memberKey="xxxxxxxxx";
         include '../includes/newdb.php';
+        $hashedPWD = md5($Password . $MemberKey);
 
         $roleSelection = "";
         $roleQuery = mysqli_query($con, "SELECT roleID, roleValue FROM role");
@@ -54,7 +62,7 @@ if(isset($_POST["btnsubmit"])){
         }
 
         $sql = mysqli_prepare($con, "insert into memberLogin(memberName, memberEMail, memberPassword, roleID, memberKey) values(?, ?, ?, ?, ?)");
-        mysqli_stmt_bind_param($sql, "sssis", $Username, $Email, $Password, $Role, $memberKey);
+        mysqli_stmt_bind_param($sql, "sssis", $Username, $Email, $hashedPWD, $Role, $MemberKey);
         mysqli_stmt_execute($sql);
 
         $Username="";

@@ -933,7 +933,7 @@ phpclass|schema||dbuser||UPDATE|G</Grants>
     </schema>
     <schema id="290" parent="1" name="phpclass">
       <Current>1</Current>
-      <LastIntrospectionLocalTimestamp>2025-12-06.20:38:26</LastIntrospectionLocalTimestamp>
+      <LastIntrospectionLocalTimestamp>2025-12-06.22:45:15</LastIntrospectionLocalTimestamp>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
     <user id="291" parent="1" name="dbuser"/>
@@ -3094,6 +3094,7 @@ phpclass|schema||dbuser||UPDATE|G</Grants>
     </column>
     <column id="770" parent="336" name="memberEmail">
       <DasType>varchar(255)|0s</DasType>
+      <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
     <column id="771" parent="336" name="memberPassword">
@@ -3114,49 +3115,59 @@ phpclass|schema||dbuser||UPDATE|G</Grants>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="775" parent="336" name="memberLogin_pk">
+    <index id="775" parent="336" name="PRIMARY">
+      <ColNames>memberEmail</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="776" parent="336" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <key id="777" parent="336" name="memberLogin_pk">
       <UnderlyingIndexName>memberLogin_pk</UnderlyingIndexName>
     </key>
-    <column id="776" parent="337" name="movieID">
+    <column id="778" parent="337" name="movieID">
       <AutoIncrement>6</AutoIncrement>
       <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="777" parent="337" name="movieTitle">
+    <column id="779" parent="337" name="movieTitle">
       <DasType>varchar(50)|0s</DasType>
       <Position>2</Position>
     </column>
-    <column id="778" parent="337" name="movieRating">
+    <column id="780" parent="337" name="movieRating">
       <DasType>varchar(5)|0s</DasType>
       <Position>3</Position>
     </column>
-    <index id="779" parent="337" name="PRIMARY">
+    <index id="781" parent="337" name="PRIMARY">
       <ColNames>movieID</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="780" parent="337" name="PRIMARY">
+    <key id="782" parent="337" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="781" parent="338" name="roleID">
+    <column id="783" parent="338" name="roleID">
       <AutoIncrement>1</AutoIncrement>
       <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="782" parent="338" name="roleValue">
+    <column id="784" parent="338" name="roleValue">
       <DasType>varchar(50)|0s</DasType>
       <Position>2</Position>
     </column>
-    <index id="783" parent="338" name="PRIMARY">
+    <index id="785" parent="338" name="PRIMARY">
       <ColNames>roleID</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="784" parent="338" name="PRIMARY">
+    <key id="786" parent="338" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>

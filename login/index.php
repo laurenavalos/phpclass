@@ -1,22 +1,39 @@
 <?php
-//include "../includes/newdb.php";
+
 session_start();
 
-if (!empty($_POST["txtUsername"]) && !empty($_POST["txtPassword"])) {
+if (!empty($_POST["txtEmail"]) && !empty($_POST["txtPassword"])) {
 
-    $username = $_POST["txtUsername"];
+    $Email = $_POST["txtEmail"];
     $passwd = $_POST["txtPassword"];
 
-    if($username=="admin" && $passwd=="p@ss"){
-        $_SESSION["UID"] =1;
-        header("Location: admin.php");
-    }else{
-        if($username=="member" && $passwd=="p@ss"){
-            header("Location: member.php");
+    include "../includes/newdb.php";
+    $sql = mysqli_prepare($con, "Select memberPassword, memberKey, roleID, memberID from memberLogin where memberEmail = ?");
+    mysqli_stmt_bind_param($sql, "s", $Email);
+    mysqli_stmt_execute($sql);
+    $result = mysqli_stmt_get_result($sql);
+    $row = mysqli_fetch_array($result);
+
+    if ($row != null) {
+        $DBPass = $row["memberPassword"];
+        $memberKey = $row["memberKey"];
+        $passwd = md5($passwd . $memberKey);
+
+        if ($passwd == $DBPass) {
+            $_SESSION["roleID"] = $row["roleID"];
+            $_SESSION["UID"] = $row["roleID"];
+            if ($row["roleID"] == 1) {
+                header("Location: admin.php");
+            } else {
+                header("Location: member.php");
+            }
+        } else {
+            $msg = "Sorry wrong username OR password";
         }
+
+    } else {
         $msg = "Sorry wrong username OR password";
     }
-
 }
 
 ?>
@@ -69,10 +86,10 @@ include "../includes/header.php";
         <form method="post">
             <div class="grid-container">
                 <div class="item1"><h3>User Login</h3></div>
-                <div class="item2">Username</div>
-                <div class="item3"><input type="text" name="txtUsername" id="txtUsername" size="60"/></div>
+                <div class="item2">Email Address</div>
+                <div class="item3"><input type="text" name="txtEmail" id="txtEmail" size="60"/></div>
                 <div class="item4">Password</div>
-                <div class="item5"><input type="password" name="txtPassword" id="Password" size="60"/></div>
+                <div class="item5"><input type="password" name="txtPassword" id="txtPassword" size="60"/></div>
                 <div class="item6"><input type="submit" value="Login"/></div>
             </div>
         </form>

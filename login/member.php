@@ -1,4 +1,8 @@
-<?php?>
+<?php
+if(isset($_SESSION["roleID"])){
+    header("Location: index.php");
+}
+?>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
