@@ -21,7 +21,7 @@ if (!empty($_POST["txtEmail"]) && !empty($_POST["txtPassword"])) {
 
         if ($passwd == $DBPass) {
             $_SESSION["roleID"] = $row["roleID"];
-            $_SESSION["UID"] = $row["roleID"];
+            $_SESSION["UID"] = $row["memberID"];
             if ($row["roleID"] == 1) {
                 header("Location: admin.php");
             } else {

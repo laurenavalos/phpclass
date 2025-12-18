@@ -27,7 +27,8 @@ class Home extends BaseController
 
             $Member = new Member();
             if ($Member->user_login($this->request->getPost('username'), $this->request->getPost('password'))) {
-                return view('admin_page');
+                header("Location: admin");
+                exit();
             } else {
             $data = array('load_error' => 'true', 'error_message' => 'Invalid username or password');
             helper('form');
