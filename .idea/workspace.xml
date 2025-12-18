@@ -4,19 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4e0ef0a3-1d11-498f-91db-9686b645e2f5" name="Changes" comment="customer password">
-      <change afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sshConfigs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/marathon/app/Controllers/Admin.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/marathon/app/Views/admin_page.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/marathon/app/Views/homepage.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/marathon/public/img/background.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/dd07640b-f06b-44de-bca1-97f139a087a4.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/dd07640b-f06b-44de-bca1-97f139a087a4/storage_v2/_src_/schema/phpclass.ACPQtA.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/webServers.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webServers.xml" afterDir="false" />
+    <list default="true" id="4e0ef0a3-1d11-498f-91db-9686b645e2f5" name="Changes" comment="public website">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -129,7 +117,7 @@
       <workItem from="1761621944186" duration="72035000" />
       <workItem from="1765072117562" duration="10367000" />
       <workItem from="1765082629967" duration="1133000" />
-      <workItem from="1765083780370" duration="8318000" />
+      <workItem from="1765083780370" duration="8967000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <option name="closed" value="true" />
@@ -267,7 +255,15 @@
       <option name="project" value="LOCAL" />
       <updated>1765065554839</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="public website">
+      <option name="closed" value="true" />
+      <created>1766029290808</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1766029290808</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -294,7 +290,8 @@
     <MESSAGE value="input validation" />
     <MESSAGE value="custom login" />
     <MESSAGE value="customer password" />
-    <option name="LAST_COMMIT_MESSAGE" value="customer password" />
+    <MESSAGE value="public website" />
+    <option name="LAST_COMMIT_MESSAGE" value="public website" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
