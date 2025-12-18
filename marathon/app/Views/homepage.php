@@ -9,7 +9,22 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Landing Page - Start Bootstrap Theme</title>
+    <title>Marathon Master</title>
+    <?php
+    $err_css="";
+    if(isset($load_error)){
+        $load_error=null;
+        $err_css =" alert alert-danger";
+        echo "<script>document.location.href='#login'</script>";
+    }
+    ?>
+
+    <style>
+        input{
+            margin: 7px !important;
+            padding: 7px;
+        }
+    </style>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -53,6 +68,9 @@
                 </li>
                 <li>
                     <a href="#services">Services</a>
+                </li>
+                <li>
+                    <a href="#login">Login</a>
                 </li>
                 <li>
                     <a href="#contact">Contact</a>
@@ -110,7 +128,61 @@
 </div>
 <!-- /.content-section-a -->
 
+<a  name="login"></a>
 <div class="content-section-b">
+
+    <div class="container">
+        <div class="col-sm-12 <?=$err_css?>">
+         <?php
+            $validation = service('validation');
+            if($validation->hasError('username')){
+                echo $validation->getError('username') . "<br />";
+            }
+            if($validation->hasError('username')) {
+                echo $validation->getError('password') . "<br />";
+
+                if (isset($error_message)) {
+                    echo $error_message;
+                }
+            }
+         ?>
+        </div>
+            <div class="row">
+            <div class="col-sm-2">
+            <div class="col-sm-4">
+                <h2>Login</h2>
+                <?php
+                echo form_open('http://10.7.66.161/marathon/public/login');
+                echo form_input('username', '', 'placeholder = "Username"')."<br>";
+                echo form_password('password', '', 'placeholder = "Password"')."<br>";
+                echo form_submit('submit', 'Login');
+                echo form_close();
+
+                ?>
+            </div>
+            <div class="col-sm-5">
+            <h2>Create Account</h2>
+                <?php
+                echo form_open('http://10.7.66.161/marathon/public/create');
+                echo form_input('username', '', 'placeholder = "Enter Username"')."<br>";
+                echo form_password('password', '', 'placeholder = "Enter Password"')."<br>";
+                echo form_password('password2', '', 'placeholder = "ReType Password"')."<br>";
+                echo form_input('email', '', 'placeholder = "Enter Email"')."<br>";
+                echo form_submit('submit', 'Create Account');
+                echo form_close();
+
+                ?>
+            </div>
+                <div class="col-sm-1">
+        </div>
+
+    </div>
+    <!-- /.container -->
+
+</div>
+<!-- /.content-section-a -->
+
+<div class="content-section-a">
 
     <div class="container">
 
@@ -132,7 +204,7 @@
 </div>
 <!-- /.content-section-b -->
 
-<div class="content-section-a">
+<div class="content-section-b">
 
     <div class="container">
 
