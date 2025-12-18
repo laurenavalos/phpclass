@@ -4,11 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4e0ef0a3-1d11-498f-91db-9686b645e2f5" name="Changes" comment="custom login">
+    <list default="true" id="4e0ef0a3-1d11-498f-91db-9686b645e2f5" name="Changes" comment="customer password">
+      <change afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sshConfigs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/marathon/app/Controllers/Admin.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/marathon/app/Views/admin_page.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/marathon/app/Views/homepage.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/marathon/public/img/background.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/dd07640b-f06b-44de-bca1-97f139a087a4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/dd07640b-f06b-44de-bca1-97f139a087a4/storage_v2/_src_/schema/phpclass.ACPQtA.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/webServers.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webServers.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/customer/addcustomer.php" beforeDir="false" afterPath="$PROJECT_DIR$/customer/addcustomer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/customer/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/customer/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/customer/viewcustomers.php" beforeDir="false" afterPath="$PROJECT_DIR$/customer/viewcustomers.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,6 +37,14 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="devuser@10.7.66.161:22 password">
+    <include_path>
+      <path value="$PROJECT_DIR$" />
+    </include_path>
+  </component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
@@ -44,6 +61,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowPanel.toolwindow.highlight.mappings": "true",
@@ -51,7 +69,10 @@
     "WebServerToolWindowPanel.toolwindow.show.date": "false",
     "WebServerToolWindowPanel.toolwindow.show.permissions": "false",
     "WebServerToolWindowPanel.toolwindow.show.size": "false",
+    "credentialsType com.jetbrains.php.remote.interpreter.ui.PhpCreateRemoteSdkForm": "SSH Configuration",
+    "credentialsType com.jetbrains.php.remote.interpreter.ui.PhpInplaceEditRemoteSdkForm": "SSH Configuration",
     "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
     "last_opened_file_path": "C:/Users/Public/phpclass",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
@@ -59,7 +80,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "web.server",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -75,6 +96,7 @@
       <recent name="C:\Users\Public\phpclass" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Public\phpclass\marathon\public\img" />
       <recent name="C:\Users\Public\phpclass\customer" />
       <recent name="C:\Users\Public\phpclass\dice\images" />
     </key>
@@ -104,7 +126,10 @@
       <workItem from="1757826934177" duration="17110000" />
       <workItem from="1759185177270" duration="27386000" />
       <workItem from="1760405564472" duration="4783000" />
-      <workItem from="1761621944186" duration="71175000" />
+      <workItem from="1761621944186" duration="72035000" />
+      <workItem from="1765072117562" duration="10367000" />
+      <workItem from="1765082629967" duration="1133000" />
+      <workItem from="1765083780370" duration="8318000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <option name="closed" value="true" />
@@ -234,7 +259,15 @@
       <option name="project" value="LOCAL" />
       <updated>1765064052238</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="customer password">
+      <option name="closed" value="true" />
+      <created>1765065554839</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1765065554839</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -260,7 +293,8 @@
     <MESSAGE value="customer&#10;update" />
     <MESSAGE value="input validation" />
     <MESSAGE value="custom login" />
-    <option name="LAST_COMMIT_MESSAGE" value="custom login" />
+    <MESSAGE value="customer password" />
+    <option name="LAST_COMMIT_MESSAGE" value="customer password" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
