@@ -4,13 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4e0ef0a3-1d11-498f-91db-9686b645e2f5" name="Changes" comment="public website">
-      <change afterPath="$PROJECT_DIR$/marathon/app/Models/Member.php" afterDir="false" />
+    <list default="true" id="4e0ef0a3-1d11-498f-91db-9686b645e2f5" name="Changes" comment="create user">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/marathon/app/Config/Database.php" beforeDir="false" afterPath="$PROJECT_DIR$/marathon/app/Config/Database.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/marathon/app/Config/Routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/marathon/app/Config/Routes.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/marathon/app/Controllers/Home.php" beforeDir="false" afterPath="$PROJECT_DIR$/marathon/app/Controllers/Home.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/marathon/app/Views/homepage.php" beforeDir="false" afterPath="$PROJECT_DIR$/marathon/app/Views/homepage.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/marathon/app/Models/Member.php" beforeDir="false" afterPath="$PROJECT_DIR$/marathon/app/Models/Member.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -122,7 +119,7 @@
       <workItem from="1761621944186" duration="72035000" />
       <workItem from="1765072117562" duration="10367000" />
       <workItem from="1765082629967" duration="1133000" />
-      <workItem from="1765083780370" duration="18314000" />
+      <workItem from="1765083780370" duration="20133000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <option name="closed" value="true" />
@@ -276,7 +273,15 @@
       <option name="project" value="LOCAL" />
       <updated>1766029824412</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="create user">
+      <option name="closed" value="true" />
+      <created>1766044107390</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1766044107390</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -304,7 +309,8 @@
     <MESSAGE value="custom login" />
     <MESSAGE value="customer password" />
     <MESSAGE value="public website" />
-    <option name="LAST_COMMIT_MESSAGE" value="public website" />
+    <MESSAGE value="create user" />
+    <option name="LAST_COMMIT_MESSAGE" value="create user" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

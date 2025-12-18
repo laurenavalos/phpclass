@@ -39,9 +39,32 @@ class Home extends BaseController
 
     public function create(): string
     {
-        //$data = $data *12;
-        echo"Login";
-        exit();
+        $rules = [
+            'fullname' => 'required',
+            'email'    => 'required|valid_email',
+            'password' => 'required',
+            'confirm_password' => 'required|matches[password]'
+        ];
+
+        if (! $this->validate($rules)) {
+            $data = array('load_error' => 'true');
+
+            helper('form');
+            return view('admin', $data);
+
+        }else {
+            $Member = new Member();
+
+            $Member->create_user($this->request->getPost('fullname'),
+                $this->request->getPost('email'),
+                $this->request->getPost('password'));
+
+            $data = array('success_message' => 'User has been created');
+
+            helper('form');
+
+            return view('admin', $data);
+        }
     }
 
 

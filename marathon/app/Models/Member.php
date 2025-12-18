@@ -28,4 +28,19 @@ class Member extends Model
             return false;
         }
     }
+
+    public function create_user($name, $email, $password)
+    {
+        $db = db_connect();
+        $memberKey = 'abc123';
+        $hashedPassword = md5($password . $memberKey);
+
+        $sql = "INSERT INTO memberLogin (memberName, memberEmail, memberPassword, memberKey, roleID)
+        VALUES (?, ?, ?, ?, 2)";
+
+        $db->query($sql, [$name, $email, $hashedPassword, $memberKey]);
+
+        return true;
+    }
+
 }
