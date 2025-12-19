@@ -12,10 +12,10 @@
     <title>SB Admin - Bootstrap Admin Template</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="css/sb-admin.css" rel="stylesheet">
+    <link href="../css/sb-admin.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -49,37 +49,38 @@
             <div class="row">
                 <div class="col-lg-12">
                     <h1 class="page-header">
-                        Add New Race
+                        Update Race
                     </h1>
                 </div>
             </div>
             <!-- /.row -->
             <div class="row">
-                <div class="col-lg-6">
+                <div class="col-lg-12">
 
-                    <form role="form" method="post" action="/marathon/public/add_race">
+                    <form role="form" method="post" action="/marathon/public/edit_race">
 
                         <div class="form-group">
                             <label>Race Name</label>
-                            <input name="race_name" id="race_name" class="form-control">
+                            <input name="race_name" id="race_name" type="text" value="<?=$race[0]['raceName']?>" class="form-control">
                         </div>
 
                         <div class="form-group">
                             <label>Race Location</label>
-                            <input name="race_location" id="race_location" class="form-control">
+                            <input name="race_location" id="race_location" type="text" value="<?=$race[0]['raceLocation']?>" class="form-control">
                         </div>
 
                         <div class="form-group">
                             <label>Race Description</label>
-                            <textarea name="race_description" id="race_description" class="form-control" rows="3"></textarea>
+                            <textarea name="race_description" id="race_description" class="form-control" rows="3"><?=$race[0]['raceDescription']?></textarea>
                         </div>
 
                         <div class="form-group">
                             <label>Race Date & Time</label>
-                            <input name="race_date" id="race_date" type="datetime-local" class="form-control">
+                            <input name="race_date" id="race_date" type="datetime-local" value="<?=$race[0]['raceDateTime']?>" class="form-control">
                         </div>
 
-                        <button type="submit" class="btn btn-primary">Submit Button</button>
+                        <input type="hidden" id="txtID" name="txtID" value="<?=$race[0]['raceID']?>">
+                        <button type="submit" class="btn btn-primary">Update Race</button>
                         <button type="reset" class="btn btn-primary">Reset Button</button>
 
                     </form>
@@ -97,10 +98,10 @@
 <!-- /#wrapper -->
 
 <!-- jQuery -->
-<script src="js/jquery.js"></script>
+<script src="../js/jquery.js"></script>
 
 <!-- Bootstrap Core JavaScript -->
-<script src="js/bootstrap.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
 
 </body>
 

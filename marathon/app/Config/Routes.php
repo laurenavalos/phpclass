@@ -17,3 +17,15 @@ $routes->get('/marathon', 'Admin::manage_marathon');
 $routes->get('/add', 'Admin::add_marathon');
 $routes->get('/runners', 'Admin::manage_runners');
 $routes->get('/registration', 'Admin::registration_form');
+
+//add new race
+$routes->post('/add_race', 'Admin::add_race');
+
+//delete
+
+$routes->get('/delete_race/(:any)', 'Admin::delete_race/$1');
+
+//update
+$routes->get('/update_race/(:any)', 'Admin::update_race/$1');
+$routes->post('/edit_race', 'Admin::edit_race');
+
