@@ -992,7 +992,7 @@ phpclass|schema||dbuser||UPDATE|G</Grants>
     </schema>
     <schema id="292" parent="1" name="phpclass">
       <Current>1</Current>
-      <LastIntrospectionLocalTimestamp>2025-12-18.21:05:11</LastIntrospectionLocalTimestamp>
+      <LastIntrospectionLocalTimestamp>2025-12-19.07:22:54</LastIntrospectionLocalTimestamp>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
     <user id="293" parent="1" name="dbuser"/>
@@ -1004,197 +1004,228 @@ phpclass|schema||dbuser||UPDATE|G</Grants>
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="296" parent="292" name="movielist">
+    <table id="296" parent="292" name="member_race">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="297" parent="292" name="race">
+    <table id="297" parent="292" name="movielist">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="298" parent="292" name="role">
+    <table id="298" parent="292" name="race">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <column id="299" parent="294" name="customerID">
+    <table id="299" parent="292" name="role">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </table>
+    <column id="300" parent="294" name="customerID">
       <AutoIncrement>9</AutoIncrement>
       <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="300" parent="294" name="first">
+    <column id="301" parent="294" name="first">
       <DasType>varchar(50)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="301" parent="294" name="last">
+    <column id="302" parent="294" name="last">
       <DasType>varchar(50)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="302" parent="294" name="address">
+    <column id="303" parent="294" name="address">
       <DasType>varchar(100)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
-    <column id="303" parent="294" name="city">
+    <column id="304" parent="294" name="city">
       <DasType>varchar(50)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>5</Position>
     </column>
-    <column id="304" parent="294" name="state">
+    <column id="305" parent="294" name="state">
       <DasType>varchar(20)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>6</Position>
     </column>
-    <column id="305" parent="294" name="zip">
+    <column id="306" parent="294" name="zip">
       <DasType>varchar(10)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>7</Position>
     </column>
-    <column id="306" parent="294" name="phone">
+    <column id="307" parent="294" name="phone">
       <DasType>varchar(15)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>8</Position>
     </column>
-    <column id="307" parent="294" name="password">
+    <column id="308" parent="294" name="password">
       <DasType>varchar(200)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>9</Position>
     </column>
-    <column id="308" parent="294" name="email">
+    <column id="309" parent="294" name="email">
       <DasType>varchar(100)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>10</Position>
     </column>
-    <index id="309" parent="294" name="PRIMARY">
+    <index id="310" parent="294" name="PRIMARY">
       <ColNames>customerID</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="310" parent="294" name="PRIMARY">
+    <key id="311" parent="294" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="311" parent="295" name="memberID">
+    <column id="312" parent="295" name="memberID">
       <AutoIncrement>5</AutoIncrement>
       <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="312" parent="295" name="memberName">
+    <column id="313" parent="295" name="memberName">
       <DasType>varchar(75)|0s</DasType>
       <Position>2</Position>
     </column>
-    <column id="313" parent="295" name="memberEmail">
+    <column id="314" parent="295" name="memberEmail">
       <DasType>varchar(255)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="314" parent="295" name="memberPassword">
+    <column id="315" parent="295" name="memberPassword">
       <DasType>varchar(255)|0s</DasType>
       <Position>4</Position>
     </column>
-    <column id="315" parent="295" name="RoleID">
+    <column id="316" parent="295" name="RoleID">
       <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>5</Position>
     </column>
-    <column id="316" parent="295" name="memberKey">
+    <column id="317" parent="295" name="memberKey">
       <DasType>varchar(255)|0s</DasType>
       <Position>6</Position>
     </column>
-    <index id="317" parent="295" name="memberLogin_pk">
+    <index id="318" parent="295" name="memberLogin_pk">
       <ColNames>memberID</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="318" parent="295" name="PRIMARY">
+    <index id="319" parent="295" name="PRIMARY">
       <ColNames>memberEmail</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="319" parent="295" name="PRIMARY">
+    <key id="320" parent="295" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <key id="320" parent="295" name="memberLogin_pk">
+    <key id="321" parent="295" name="memberLogin_pk">
       <UnderlyingIndexName>memberLogin_pk</UnderlyingIndexName>
     </key>
-    <column id="321" parent="296" name="movieID">
+    <column id="322" parent="296" name="memberID">
+      <DasType>int|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="323" parent="296" name="raceID">
+      <DasType>int|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <column id="324" parent="296" name="roleID">
+      <DasType>int|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+    </column>
+    <index id="325" parent="296" name="PRIMARY">
+      <ColNames>memberID
+raceID
+roleID</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="326" parent="296" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="327" parent="297" name="movieID">
       <AutoIncrement>6</AutoIncrement>
       <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="322" parent="296" name="movieTitle">
+    <column id="328" parent="297" name="movieTitle">
       <DasType>varchar(50)|0s</DasType>
       <Position>2</Position>
     </column>
-    <column id="323" parent="296" name="movieRating">
+    <column id="329" parent="297" name="movieRating">
       <DasType>varchar(5)|0s</DasType>
       <Position>3</Position>
     </column>
-    <index id="324" parent="296" name="PRIMARY">
+    <index id="330" parent="297" name="PRIMARY">
       <ColNames>movieID</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="325" parent="296" name="PRIMARY">
+    <key id="331" parent="297" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="326" parent="297" name="raceID">
+    <column id="332" parent="298" name="raceID">
       <AutoIncrement>1</AutoIncrement>
       <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="327" parent="297" name="raceName">
+    <column id="333" parent="298" name="raceName">
       <DasType>varchar(75)|0s</DasType>
       <Position>2</Position>
     </column>
-    <column id="328" parent="297" name="raceLocation">
+    <column id="334" parent="298" name="raceLocation">
       <DasType>varchar(255)|0s</DasType>
       <Position>3</Position>
     </column>
-    <column id="329" parent="297" name="raceDescription">
+    <column id="335" parent="298" name="raceDescription">
       <DasType>varchar(255)|0s</DasType>
       <Position>4</Position>
     </column>
-    <column id="330" parent="297" name="raceDateTime">
+    <column id="336" parent="298" name="raceDateTime">
       <DasType>datetime|0s</DasType>
       <Position>5</Position>
     </column>
-    <index id="331" parent="297" name="PRIMARY">
+    <index id="337" parent="298" name="PRIMARY">
       <ColNames>raceID</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="332" parent="297" name="PRIMARY">
+    <key id="338" parent="298" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="333" parent="298" name="roleID">
+    <column id="339" parent="299" name="roleID">
       <AutoIncrement>3</AutoIncrement>
       <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="334" parent="298" name="roleValue">
+    <column id="340" parent="299" name="roleValue">
       <DasType>varchar(50)|0s</DasType>
       <Position>2</Position>
     </column>
-    <index id="335" parent="298" name="PRIMARY">
+    <index id="341" parent="299" name="PRIMARY">
       <ColNames>roleID</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="336" parent="298" name="PRIMARY">
+    <key id="342" parent="299" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>

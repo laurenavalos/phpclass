@@ -6,11 +6,8 @@ use CodeIgniter\Model;
 
 class Race extends Model
 {
-    public function get_races()
+    public function get_races($memberKey)
     {
-        $this->session = service('session');
-        $this->session->start();
-
         $memberKey = $this->session->get("memberKey");
 
         $db = db_connect();
@@ -18,6 +15,16 @@ class Race extends Model
         $query = $db->query($sql);
         return $query->getResultArray();
     }
+    public function get_runners($memberKey, $RaceID)
+    {
+        $memberKey = $this->session->get("memberKey");
+
+        $db = db_connect();
+        $sql = "select ml.memberPassword, ml.memberEmail, ml.memberID, mr.roleID from member_race mr inner join memberLogin ml on mr.memberID = ml.memberID where ml.memberKey = ? and mr.raceID = ? and mr.roleID = '3' ;";
+        $query = $db->query($sql, [$memberKey, $RaceID]);
+        return $query->getResultArray();
+    }
+
     public function get_race($id)
     {
         $db = db_connect();

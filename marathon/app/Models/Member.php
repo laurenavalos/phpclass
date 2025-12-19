@@ -9,7 +9,9 @@ class Member extends Model
     public function has_access($raceID, $memberKey){
         try{
             $db = db_connect();
-            $sql = "select r.raceID from race r inner join member_race mr on r.raceID = mr.raceID inner join memberLogin ml on mr.memberID = ml.memberID where ml.memberKey = ? and mr.roleID = '2' and mr.raceID = ?;";
+            //$sql = "select r.raceID from race r inner join member_race mr on r.raceID = mr.raceID inner join memberLogin ml on mr.memberID = ml.memberID where ml.memberKey = ? and mr.roleID = '2' and mr.raceID = ?;";
+            $sql = "select ml.memberPassword, ml.memberEmail, ml.memberID, mr.roleID
+from member_race mr inner join memberLogin ml on mr.memberID = ml.memberID where ml.memberKey = ? and mr.raceID = ? and mr.roleID = '2';";
 
             $query = $db->query($sql, [$memberKey, $raceID]);
             $row = $query->getFirstRow();
@@ -56,8 +58,33 @@ class Member extends Model
         }
     }
 
+    public function Add_user($memberID, $raceID){
+        try{
+            $db = db_connect();
+            $sql = "INSERT INTO memberLogin (memberID, raceID, roleID)
+        VALUES (?, ?, 3)";
+            $db->query($sql, [$memberID, $raceID]);
+
+            return true;
+        }catch(Exception $ex) {
+            return false;
+        }
+    }
+    public function delete_user($memberID, $raceID){
+        try{
+            $db = db_connect();
+            $sql = "delete from member_race where memberID = ? and raceID = ? and roleID = 3";
+            $db->query($sql, [$memberID, $raceID]);
+
+            return true;
+        }catch(Exception $ex) {
+            return false;
+        }
+    }
+
     public function create_user($name, $email, $password)
     {
+        try{
         $db = db_connect();
         $memberKey = 'abc123';
         $hashedPassword = md5($password . $memberKey);
@@ -68,6 +95,9 @@ class Member extends Model
         $db->query($sql, [$name, $email, $hashedPassword, $memberKey]);
 
         return true;
+    }catch(Exception $ex) {
+            return false;
+        }
     }
 
 }
