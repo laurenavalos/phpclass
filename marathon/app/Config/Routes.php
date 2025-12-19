@@ -29,3 +29,7 @@ $routes->get('/delete_race/(:any)', 'Admin::delete_race/$1');
 $routes->get('/update_race/(:any)', 'Admin::update_race/$1');
 $routes->post('/edit_race', 'Admin::edit_race');
 
+//logout
+
+
+$routes->get('/logout', 'Admin::logout');

@@ -10,7 +10,7 @@ mt_rand(0, 65535), mt_rand(0, 65535));
 
 $err="";
 if(($_SESSION["roleID"]!=1)){
-    header("Location: index.php");
+    //header("Location: index.php");
 }
 
 if(isset($_POST["btnsubmit"])){
